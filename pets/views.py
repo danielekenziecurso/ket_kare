@@ -15,17 +15,17 @@ class PetView(APIView, PageNumberPagination):
         group = Group.objects.filter(
             scientific_name__iexact=receive_group["scientific_name"]
         ).first()
-        # pet = None
         if not group:
             group = Group.objects.create(**receive_group)
-            pet = Pet.objects.create(**serializer.validated_data, group=group)
+        pet = Pet.objects.create(**serializer.validated_data, group=group)
         for traits in receive_traits:
             trait = Trait.objects.filter(name__iexact=traits["name"]).first()
             if not trait:
                 trait = Trait.objects.create(**traits)
+        
             pet.traits.add(trait)
 
-        pet.traits.add(trait)
+     
         serializer = PetSerializer(pet)
 
         return Response(serializer.data, status.HTTP_201_CREATED)
