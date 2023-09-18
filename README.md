@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # M5 - Pet Kare
 
 ## Preparando ambiente para execução dos testes
@@ -79,3 +80,6 @@ pytest --testdox -vvs
 --- 
 ## Observação
 Não existem testes isolados para a tarefa 2. As funcionalidades que devem ser testadas desta tarefa estão presentes nos testes da tarefa 3.
+=======
+# ket_kare
+>>>>>>> 1ec98fa00ca808e81af16241687445ae3a84820a
